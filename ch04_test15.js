@@ -1,5 +1,5 @@
 var winston = require('winston'); // 로그 처리 모듈
-var winstonDaily = require('winsten-daily-rotate-file'); // 로그 일별 처리 모듈
+var winstonDaily = require('winston-daily-rotate-file'); // 로그 일별 처리 모듈
 var moment = require('moment'); // 시간 처리 모듈
 
 function timeStampFormat() {
@@ -55,3 +55,10 @@ var logger = new (winston.Logger)({
     ]
 });
 
+/*
+로그 수준 : 어쩐 정보까지 출력할 것인지 결정
+debug: 0 > info: 1 > notice: 2 > warning: 3 > error: 4 > crit: 5 > alert: 6 > emerg: 7
+하위 수준은 상위 수준을 포함하여 출력
+*/
+
+// winston : 로그를 파일로 저장하면서 화면에 출력
